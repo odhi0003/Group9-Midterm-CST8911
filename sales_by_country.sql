@@ -1,0 +1,7 @@
+SELECT
+    COUNTRY,
+    COUNT(DISTINCT ORDERNUMBER) AS TotalOrders,
+    ROUND(SUM(SALES), 2) AS TotalSales
+FROM dbo.Sales_Staging
+GROUP BY COUNTRY
+ORDER BY TotalSales DESC;

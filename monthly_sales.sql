@@ -1,0 +1,7 @@
+SELECT
+    YEAR(ORDERDATE) AS SalesYear,
+    MONTH(ORDERDATE) AS SalesMonth,
+    ROUND(SUM(SALES), 2) AS TotalSales
+FROM dbo.Sales_Staging
+GROUP BY YEAR(ORDERDATE), MONTH(ORDERDATE)
+ORDER BY SalesYear, SalesMonth;
